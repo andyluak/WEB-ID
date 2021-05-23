@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subiect 3</title>
+</head>
+<body>
+    <style>
+    input {
+        font-weight: bold;
+    }
+    p {
+        opacity: 0.5;
+    }
+    </style>
+    <input type="text" onmouseleave="alert('Am iesit')">
+
+    <p oncontextmenu="adaugaUmbra()"> Text cu umbra </p>
+</body>
+
+    <script>
+        function adaugaUmbra() {
+
+            document.getElementsByTagName('p')[0].setAttribute('style', 'font-family: Monotype; text-shadow: 2px 2px black');
+        }
+    </script>
+</html>

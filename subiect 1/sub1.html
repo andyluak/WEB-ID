@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subiect 1</title>
+</head>
+<body>
+    <style>
+        div {
+            position: relative;
+            height: 300px;
+
+        }
+
+       .ex1 p{
+            display: none;
+        }
+
+        .show {
+            position: absolute;
+            bottom: 50%;
+            display: block;
+        }
+
+        .schimbaDisplay {
+            display: block;
+        }
+    </style>
+    <div class="ex1">
+        <p id='peLink' class='hidden'> Cursorul este pe link</p>
+        <p id='inafaraLink' class='hidden'> Cursorul este in alta parte </p>
+
+        <a href="google.ro" onmouseover="arataTextLink()" onmouseleave="arataTextInafaraLink()"> Link  </a>
+
+    </div>
+
+    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque accusantium blanditiis facilis? Rem, dolorem omnis repudiandae mollitia sunt expedita temporibus accusamus <span id='pDiferit' onclick='schimbaDisplay()'> CLICK AICI </span> accusantium veritatis, eos nam est quaerat in vero.</p>
+
+    <form  name="formular" method='POST' onSubmit="return check();">
+        <input type="text" id="textBox" name="textBox" class='textbox' >
+        <input type="submit" id='submit' value="Submit" class ='button' >
+    </form>
+
+    <script>
+        function arataTextLink() {
+            console.log(document.getElementById('peLink'));
+            document.getElementById('peLink').classList.add('show');
+
+        }
+
+        function arataTextInafaraLink() {
+            document.getElementById('peLink').classList.remove('show');
+            document.getElementById('inafaraLink').classList.add('show');
+            setTimeout( function() {
+                document.getElementById('inafaraLink').classList.remove('show');
+            }, 200)
+        }
+
+        function schimbaDisplay( ) {
+            document.getElementById('pDiferit').classList.toggle('schimbaDisplay');
+        }
+
+        function check() {
+            let form = document.forms['formular']['textBox'].value;
+            if( '' == form ) {
+                alert('Scrie ceva ');
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+    </script>
+</body>
+</html>

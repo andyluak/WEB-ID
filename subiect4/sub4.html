@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subiect 4</title>
+</head>
+<style>
+    .poza{
+        width: 500px;
+        height: 500px;
+    }
+
+    .ascunde {
+        display: none;
+    }
+</style>
+<body>
+    <p onmouseover='schimbaAlinierea()' id="text"> Text cu aliniere diferita </p>
+
+    <img class="poza" src="https://images.unsplash.com/photo-1621490112033-56194d2c4233?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
+    <button onclick="ascundePoza()"> Ascunde poza</button>
+</body>
+    <script>
+        function schimbaAlinierea() {
+            document.getElementById('text').setAttribute('style', 'text-align: right;');
+        }
+
+        function ascundePoza() {
+            document.getElementsByClassName('poza')[0].classList.toggle('ascunde');
+        }
+    </script>
+</html>
